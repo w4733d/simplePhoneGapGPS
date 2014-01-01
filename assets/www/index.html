@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	
+		<title>PhonegapGPS</title>
+
+		<script type="text/javascript" src="cordova.js"></script> 
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src ="js/latlon.js">//</script> 
+		
+		
+		<style type="text/css">
+			#arrow{
+				position: absolute;
+
+				background: 50% 50% no-repeat; 
+				background-size: auto 35%;
+				background-image: url('img/arrow.png');
+				top: 20%;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			
+			.titleDiv, .text{
+				color:#2489ce;	
+				margin-top: 10%;
+				text-align: center;
+				font-size:200%
+				
+			}
+			.destinationDiv{
+				width: 70%;
+				padding: 10%;
+				text-align: center;
+				margin: auto;
+			}
+			
+			.backButton{
+				position:absolute;
+				width:300px;
+				height:100px;
+				margin-left:-150px;
+				bottom:0px;
+				left:50%;
+			}
+			
+			
+		</style>
+    
+		<script type="text/javascript" src ="js/code.js">//</script>		
+		
+	</head>
+
+	<body>
+	
+		<div id=mainView>
+			<div class=titleDiv><h2> Please Select Your Destination </h2></div>
+			<div class=destinationDiv>
+				<ul id=destinations data-role="listview" data-icon="false" data-inset="true" data-filter="true" data-filter-reveal="true"></ul>
+			</div>
+		</div>
+		
+        <div id="navView">
+        	<div class=text>
+				<h2 id="destinationText"></h2>
+				<span id="distance"></span>
+			</div>
+			<div id="arrow"></div>
+			<div class=backButton><button onClick=switchView();>Go Back</button></div>
+		</div>
+		
+		<script type="text/javascript">populateDests();switchView();</script>
+		
+	</body>
+</html>
